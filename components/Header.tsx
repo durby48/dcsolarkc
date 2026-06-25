@@ -29,13 +29,13 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 shadow-md backdrop-blur"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-tan/95 shadow-md backdrop-blur"
+          : "bg-tan/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container-px flex h-16 items-center justify-between sm:h-20">
+      <div className="container-px flex h-16 items-center justify-between sm:h-[4.5rem]">
         <a href="#top" className="flex items-center" aria-label={`${siteConfig.name} home`}>
-          <Logo priority className="h-9 w-auto sm:h-11" />
+          <Logo priority className="h-8 sm:h-9" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -43,12 +43,12 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-navy/80 transition-colors hover:text-ocean"
+              className="text-sm font-medium text-ink/75 transition-colors hover:text-ocean"
             >
               {link.label}
             </a>
           ))}
-          <a href={telHref} className="inline-flex items-center gap-2 text-sm font-semibold text-navy-deep">
+          <a href={telHref} className="inline-flex items-center gap-2 text-sm font-semibold text-ink">
             <PhoneIcon className="h-4 w-4 text-ocean" />
             {siteConfig.phone}
           </a>
@@ -59,7 +59,7 @@ export function Header() {
 
         <button
           type="button"
-          className="text-navy-deep lg:hidden"
+          className="text-ink lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -69,22 +69,19 @@ export function Header() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`lg:hidden ${open ? "block" : "hidden"} border-t border-navy/10 bg-white`}>
+      <div className={`lg:hidden ${open ? "block" : "hidden"} border-t border-ink/10 bg-tan`}>
         <nav className="container-px flex flex-col gap-1 py-4" aria-label="Mobile">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-medium text-navy/90 transition-colors hover:bg-cream hover:text-ocean"
+              className="rounded-lg px-3 py-3 text-base font-medium text-ink/90 transition-colors hover:bg-cream hover:text-ocean"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href={telHref}
-            className="rounded-lg px-3 py-3 text-base font-semibold text-navy-deep"
-          >
+          <a href={telHref} className="rounded-lg px-3 py-3 text-base font-semibold text-ink">
             Call {siteConfig.phone}
           </a>
           <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full">

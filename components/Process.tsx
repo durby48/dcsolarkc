@@ -38,7 +38,7 @@ export function Process() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">How It Works</span>
           <h2 className="section-heading mt-3">A simple path to solar</h2>
-          <p className="mt-5 text-lg leading-relaxed text-navy/70">
+          <p className="mt-5 text-lg leading-relaxed text-ink/70">
             We keep the process straightforward and transparent from first call to power-on.
           </p>
         </div>
@@ -47,13 +47,13 @@ export function Process() {
           {steps.map((step) => {
             const Icon = step.icon;
             return (
-              <div key={step.n} className="relative rounded-2xl border border-navy/10 bg-white/70 p-7 shadow-card">
+              <div key={step.n} className="relative rounded-2xl border border-ink/10 bg-white/70 p-7 shadow-card">
                 <span className="font-display text-4xl font-extrabold text-sun/40">{step.n}</span>
-                <div className="mt-3 flex h-12 w-12 items-center justify-center rounded-xl bg-navy-deep text-sun">
+                <div className="mt-3 flex h-12 w-12 items-center justify-center rounded-xl bg-ink text-sun">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 font-display text-lg font-bold text-navy-deep">{step.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-navy/70">{step.description}</p>
+                <h3 className="mt-4 font-display text-lg font-bold text-ink">{step.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-ink/70">{step.description}</p>
               </div>
             );
           })}

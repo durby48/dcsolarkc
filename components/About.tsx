@@ -16,12 +16,12 @@ export function About() {
         <div>
           <span className="eyebrow">About DC Solar KC</span>
           <h2 className="section-heading mt-3">A local solar company you can trust</h2>
-          <p className="mt-5 text-lg leading-relaxed text-navy/75">
+          <p className="mt-5 text-lg leading-relaxed text-ink/75">
             DC Solar KC is a Kansas City–based solar company owned by {siteConfig.owner}. We help
             homeowners and businesses across Missouri and Kansas install, maintain, and restore
             solar energy systems.
           </p>
-          <p className="mt-4 leading-relaxed text-navy/70">
+          <p className="mt-4 leading-relaxed text-ink/70">
             What sets us apart is the work other installers shy away from: carefully removing and
             reinstalling solar for roof replacements and insurance claims — including older,
             obsolete systems that need modern, code-compliant equipment to be made whole again.
@@ -33,14 +33,14 @@ export function About() {
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ocean/15 text-ocean">
                   <CheckIcon className="h-4 w-4" />
                 </span>
-                <span className="text-navy/80">{point}</span>
+                <span className="text-ink/80">{point}</span>
               </li>
             ))}
           </ul>
         </div>
 
         <div className="relative">
-          <div className="rounded-[2rem] border border-navy/10 bg-white p-8 shadow-card sm:p-10">
+          <div className="rounded-[2rem] border border-ink/10 bg-white p-8 shadow-card sm:p-10">
             <Logo className="h-16 w-auto" />
             <div className="mt-8 grid grid-cols-2 gap-4">
               <Stat icon={<MapPinIcon className="h-5 w-5" />} label="Based in" value={siteConfig.baseCity} />
@@ -60,12 +60,12 @@ export function About() {
 
 function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
-    <div className="rounded-xl border border-navy/10 bg-cream/60 p-4">
-      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-deep text-sun">
+    <div className="rounded-xl border border-ink/10 bg-cream/60 p-4">
+      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-sun">
         {icon}
       </span>
-      <p className="mt-3 text-xs uppercase tracking-wide text-navy/50">{label}</p>
-      <p className="text-sm font-semibold text-navy-deep">{value}</p>
+      <p className="mt-3 text-xs uppercase tracking-wide text-ink/50">{label}</p>
+      <p className="text-sm font-semibold text-ink">{value}</p>
     </div>
   );
 }

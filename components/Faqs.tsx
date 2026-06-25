@@ -34,18 +34,18 @@ export function Faqs() {
           <h2 className="section-heading mt-3">Frequently asked questions</h2>
         </div>
 
-        <div className="mx-auto mt-12 max-w-3xl divide-y divide-navy/10 overflow-hidden rounded-2xl border border-navy/10 bg-white/70">
+        <div className="mx-auto mt-12 max-w-3xl divide-y divide-ink/10 overflow-hidden rounded-2xl border border-ink/10 bg-white/70">
           {faqs.map((faq) => (
             <details key={faq.q} className="group px-6 py-5 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-navy-deep">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-ink">
                 {faq.q}
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy-deep text-cream transition-transform duration-200 group-open:rotate-45">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink text-cream transition-transform duration-200 group-open:rotate-45">
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                     <path d="M12 5v14M5 12h14" />
                   </svg>
                 </span>
               </summary>
-              <p className="mt-3 leading-relaxed text-navy/70">{faq.a}</p>
+              <p className="mt-3 leading-relaxed text-ink/70">{faq.a}</p>
             </details>
           ))}
         </div>

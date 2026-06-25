@@ -55,7 +55,7 @@ export function Services() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">What We Do</span>
           <h2 className="section-heading mt-3">Solar services for every property</h2>
-          <p className="mt-5 text-lg leading-relaxed text-navy/70">
+          <p className="mt-5 text-lg leading-relaxed text-ink/70">
             From brand-new installs to the tricky removal-and-reinstall work other companies
             avoid, DC Solar KC handles the full lifecycle of your solar system.
           </p>
@@ -72,20 +72,20 @@ export function Services() {
                 }`}
               >
                 {service.featured && (
-                  <span className="mb-4 inline-block rounded-full bg-sun/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-navy-deep">
+                  <span className="mb-4 inline-block rounded-full bg-sun/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ink">
                     Our Specialty
                   </span>
                 )}
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-deep text-sun">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-ink text-sun">
                   <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-navy-deep">
+                <h3 className="mt-5 font-display text-xl font-bold text-ink">
                   {service.title}
                 </h3>
-                <p className="mt-3 leading-relaxed text-navy/70">{service.description}</p>
+                <p className="mt-3 leading-relaxed text-ink/70">{service.description}</p>
                 <ul className="mt-5 space-y-2">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-center gap-2.5 text-sm text-navy/80">
+                    <li key={point} className="flex items-center gap-2.5 text-sm text-ink/80">
                       <CheckIcon className="h-4 w-4 shrink-0 text-ocean" />
                       {point}
                     </li>
@@ -96,9 +96,9 @@ export function Services() {
           })}
         </div>
 
-        <div className="mt-12 flex items-center justify-center gap-3 rounded-2xl border border-navy/10 bg-white/70 px-6 py-5 text-center">
+        <div className="mt-12 flex items-center justify-center gap-3 rounded-2xl border border-ink/10 bg-white/70 px-6 py-5 text-center">
           <PanelIcon className="hidden h-8 w-8 shrink-0 text-ocean sm:block" />
-          <p className="text-navy/80">
+          <p className="text-ink/80">
             Need solar taken down for a roof replacement or storm claim?{" "}
             <a href="#contact" className="font-semibold text-ocean underline-offset-2 hover:underline">
               We handle removals &amp; reinstalls

@@ -8,25 +8,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // DC Solar brand palette (from branding/colors)
+        // DC Solar brand palette — soft, sunny: pastel blue + tan + cream
         cream: "#FFF3E6",
+        tan: "#ECD9BE",
+        "tan-deep": "#D9BF98",
+        sky: "#9FD6F2",
+        "sky-soft": "#DCEFFB",
+        ocean: "#5AA8CF",
         sun: "#FFB066",
         "sun-light": "#FFD3A6",
-        sky: "#9FD6F2",
-        ocean: "#5AA8CF",
-        // Complementary deep blues for contrast on dark sections
-        navy: "#123B57",
-        "navy-deep": "#0C2A40",
-        ink: "#0C2A40",
+        // Warm dark brown for text + dark tiles (replaces the old navy)
+        ink: "#3D352E",
+        "ink-soft": "#6B5D4F",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-sora)", "var(--font-inter)", "sans-serif"],
       },
       boxShadow: {
-        card: "0 10px 40px -12px rgba(12, 42, 64, 0.18)",
-        "card-hover": "0 20px 50px -12px rgba(12, 42, 64, 0.28)",
-        glow: "0 18px 50px -12px rgba(255, 176, 102, 0.45)",
+        card: "0 10px 40px -12px rgba(61, 53, 46, 0.20)",
+        "card-hover": "0 20px 50px -12px rgba(61, 53, 46, 0.30)",
+        glow: "0 18px 50px -12px rgba(255, 176, 102, 0.5)",
       },
       borderRadius: {
         xl2: "1.25rem",

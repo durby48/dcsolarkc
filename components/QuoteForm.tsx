@@ -16,8 +16,8 @@ const propertyOptions = ["Residential", "Commercial", "Other"];
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClasses =
-  "w-full rounded-xl border border-navy/15 bg-white px-4 py-3 text-navy-deep placeholder-navy/40 shadow-sm outline-none transition focus:border-ocean focus:ring-2 focus:ring-ocean/30";
-const labelClasses = "mb-1.5 block text-sm font-medium text-navy-deep";
+  "w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink placeholder-ink/40 shadow-sm outline-none transition focus:border-ocean focus:ring-2 focus:ring-ocean/30";
+const labelClasses = "mb-1.5 block text-sm font-medium text-ink";
 
 export function QuoteForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -75,8 +75,8 @@ export function QuoteForm() {
             <path d="M4 12.5l5 5 11-11" />
           </svg>
         </div>
-        <h3 className="mt-4 font-display text-2xl font-bold text-navy-deep">Request received!</h3>
-        <p className="mt-2 text-navy/70">{message}</p>
+        <h3 className="mt-4 font-display text-2xl font-bold text-ink">Request received!</h3>
+        <p className="mt-2 text-ink/70">{message}</p>
         <button
           type="button"
           onClick={() => {
@@ -94,7 +94,7 @@ export function QuoteForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl border border-navy/10 bg-white/90 p-6 shadow-card sm:p-8"
+      className="rounded-2xl border border-ink/10 bg-white/90 p-6 shadow-card sm:p-8"
       noValidate
     >
       <div className="grid gap-5 sm:grid-cols-2">
@@ -153,8 +153,8 @@ export function QuoteForm() {
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor="is_insurance_claim" className="flex items-center gap-3 rounded-xl border border-navy/15 bg-cream/50 px-4 py-3 text-sm text-navy-deep">
-            <input id="is_insurance_claim" name="is_insurance_claim" type="checkbox" className="h-5 w-5 rounded border-navy/30 text-ocean focus:ring-ocean/40" />
+          <label htmlFor="is_insurance_claim" className="flex items-center gap-3 rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink">
+            <input id="is_insurance_claim" name="is_insurance_claim" type="checkbox" className="h-5 w-5 rounded border-ink/30 text-ocean focus:ring-ocean/40" />
             This is related to an insurance claim or roof replacement
           </label>
         </div>
@@ -169,7 +169,7 @@ export function QuoteForm() {
       <button type="submit" disabled={status === "submitting"} className="btn-primary mt-6 w-full text-base disabled:cursor-not-allowed disabled:opacity-60">
         {status === "submitting" ? "Sending..." : "Request My Free Quote"}
       </button>
-      <p className="mt-3 text-center text-xs text-navy/55">
+      <p className="mt-3 text-center text-xs text-ink/55">
         We&apos;ll never share your information. Expect a reply within 1–2 business days.
       </p>
     </form>

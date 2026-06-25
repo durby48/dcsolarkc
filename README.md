@@ -119,15 +119,17 @@ Logo: `public/logo.png` — the official DC Solar KC Kansas City–skyline wordm
 (black art on a transparent background; auto-inverted to white on dark sections via
 `components/Logo.tsx`). `public/logo-original.png` keeps the untouched source.
 
-| Token      | Hex       | Use                          |
-| ---------- | --------- | ---------------------------- |
-| Cream      | `#FFF3E6` | Page background              |
-| Sun        | `#FFB066` | Primary CTA / accents        |
-| Sun Light  | `#FFD3A6` | Soft highlights              |
-| Sky        | `#9FD6F2` | Panel/sky accents            |
-| Ocean      | `#5AA8CF` | Links / secondary accents    |
-| Navy       | `#123B57` | Dark surfaces                |
-| Navy Deep  | `#0C2A40` | Header text / dark sections  |
+| Token      | Hex       | Use                              |
+| ---------- | --------- | -------------------------------- |
+| Cream      | `#FFF3E6` | Page background                  |
+| Tan        | `#ECD9BE` | Header + alternating sections    |
+| Tan Deep   | `#D9BF98` | Footer surface                   |
+| Sky        | `#9FD6F2` | Hero/contact pastel-blue surface |
+| Sky Soft   | `#DCEFFB` | Soft blue section background      |
+| Ocean      | `#5AA8CF` | Links / secondary accents        |
+| Sun        | `#FFB066` | Primary CTA / accents            |
+| Sun Light  | `#FFD3A6` | Soft highlights                  |
+| Ink        | `#3D352E` | Text + dark icon tiles (warm brown) |
 
 ## Notes
 
