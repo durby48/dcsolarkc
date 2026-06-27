@@ -52,6 +52,12 @@ export function Header() {
             <PhoneIcon className="h-4 w-4 text-ocean" />
             {siteConfig.phone}
           </a>
+          <a
+            href="/login"
+            className="inline-flex items-center rounded-full border border-ocean/50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-ocean transition-colors hover:bg-ocean hover:text-white"
+          >
+            Employee Login
+          </a>
           <a href="#contact" className="btn-primary">
             Free Quote
           </a>
@@ -83,6 +89,13 @@ export function Header() {
           ))}
           <a href={telHref} className="rounded-lg px-3 py-3 text-base font-semibold text-ink">
             Call {siteConfig.phone}
+          </a>
+          <a
+            href="/login"
+            onClick={() => setOpen(false)}
+            className="mt-1 rounded-lg border border-ocean/40 px-3 py-3 text-base font-semibold text-ocean transition-colors hover:bg-sky-soft"
+          >
+            Employee Login
           </a>
           <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full">
             Free Quote
