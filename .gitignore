@@ -36,3 +36,9 @@ deploy_key_dcsolar.pub
 
 # build helper scripts
 /scripts
+
+# service-account / secret keys (never commit)
+*service-account*.json
+*-sa-*.json
+gmail-sa-*.json
+secrets/
