@@ -137,6 +137,8 @@ export type Job = {
   customer_id: string | null;
   status: JobStatus;
   description: string | null;
+  scheduled_for: string | null;
+  scheduled_end: string | null;
 };
 
 export type JobInput = {
@@ -144,6 +146,8 @@ export type JobInput = {
   customer_id?: string | null;
   status?: JobStatus;
   description?: string | null;
+  scheduled_for?: string | null;
+  scheduled_end?: string | null;
 };
 
 /** A logged block of employee time; labor cost = hours × rate. */
