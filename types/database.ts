@@ -81,6 +81,11 @@ export type FinanceEntry = {
   status: string;
   source_file: string | null;
   extracted: Record<string, unknown> | null;
+  /** Pass 3 links (nullable; present once ws-customers-jobs-hours.sql is run). */
+  customer_id?: string | null;
+  job_id?: string | null;
+  document_number?: string | null;
+  document_path?: string | null;
 };
 
 /** Shape accepted by POST /api/finance/entry (company is server-derived). */
@@ -93,6 +98,76 @@ export type FinanceEntryInput = {
   description?: string | null;
   occurred_on?: string | null;
   status?: string;
+  customer_id?: string | null;
+  job_id?: string | null;
+  document_number?: string | null;
+  document_path?: string | null;
+};
+
+/** A customer in the per-company customer library (Supabase source of truth). */
+export type Customer = {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  company: string;
+  name: string;
+  email: string | null;
+  phone: string | null;
+  address: string | null;
+  notes: string | null;
+};
+
+export type CustomerInput = {
+  name: string;
+  email?: string | null;
+  phone?: string | null;
+  address?: string | null;
+  notes?: string | null;
+};
+
+export type JobStatus = "active" | "completed" | "on_hold";
+
+/** A job/project that hours, finance entries, and documents can reference. */
+export type Job = {
+  id: string;
+  created_at: string;
+  updated_at: string;
+  company: string;
+  name: string;
+  customer_id: string | null;
+  status: JobStatus;
+  description: string | null;
+};
+
+export type JobInput = {
+  name: string;
+  customer_id?: string | null;
+  status?: JobStatus;
+  description?: string | null;
+};
+
+/** A logged block of employee time; labor cost = hours × rate. */
+export type EmployeeHours = {
+  id: string;
+  created_at: string;
+  company: string;
+  employee: string;
+  customer_id: string | null;
+  job_id: string | null;
+  occurred_on: string | null;
+  hours: number;
+  rate: number;
+  description: string | null;
+};
+
+export type EmployeeHoursInput = {
+  employee: string;
+  customer_id?: string | null;
+  job_id?: string | null;
+  occurred_on?: string | null;
+  hours: number;
+  rate?: number;
+  description?: string | null;
 };
 
 export type Database = {
@@ -130,6 +205,24 @@ export type Database = {
           extracted?: Record<string, unknown> | null;
         };
         Update: Partial<FinanceEntry>;
+        Relationships: [];
+      };
+      customers: {
+        Row: Customer;
+        Insert: CustomerInput & { id?: string; created_at?: string; updated_at?: string; company: string };
+        Update: Partial<Customer>;
+        Relationships: [];
+      };
+      jobs: {
+        Row: Job;
+        Insert: JobInput & { id?: string; created_at?: string; updated_at?: string; company: string };
+        Update: Partial<Job>;
+        Relationships: [];
+      };
+      employee_hours: {
+        Row: EmployeeHours;
+        Insert: EmployeeHoursInput & { id?: string; created_at?: string; company: string };
+        Update: Partial<EmployeeHours>;
         Relationships: [];
       };
     };
