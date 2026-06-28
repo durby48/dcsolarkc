@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site";
  *   - NOTIFICATION_FROM  (optional, defaults to a notifications@<domain> sender)
  *
  * Failures are logged but never thrown, so a missing/broken email setup will
- * not break a quote submission.
+ * not break a booking or waitlist submission.
  */
 
 type SendArgs = {
@@ -53,6 +53,50 @@ export async function sendNotificationEmail({ subject, html, replyTo }: SendArgs
     }
   } catch (err) {
     console.error("Resend email error:", err);
+  }
+}
+
+export type ReceiptEmailArgs = {
+  to: string;
+  subject: string;
+  html: string;
+  /** Base64-encoded PDF receipt to attach. */
+  pdfBase64: string;
+  filename: string;
+};
+
+/**
+ * Sends a payment receipt to a customer via Resend with the receipt PDF attached.
+ * Returns a result (unlike sendNotificationEmail) so the API route can report
+ * success/failure to the operator who clicked "Email receipt".
+ */
+export async function sendReceiptEmail(
+  args: ReceiptEmailArgs,
+): Promise<{ ok: boolean; error?: string }> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from =
+    process.env.NOTIFICATION_FROM || `${siteConfig.name} <notifications@${siteConfig.domain}>`;
+  if (!apiKey) return { ok: false, error: "email not configured (RESEND_API_KEY not set)" };
+
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from,
+        to: [args.to],
+        subject: args.subject,
+        html: args.html,
+        attachments: [{ filename: args.filename, content: args.pdfBase64 }],
+      }),
+    });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      return { ok: false, error: `Resend ${res.status}: ${detail.slice(0, 300)}` };
+    }
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: (err as Error).message };
   }
 }
 
