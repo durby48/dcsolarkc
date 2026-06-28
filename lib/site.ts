@@ -13,6 +13,9 @@ export const siteConfig = {
   owner: "Devon Durbin",
   serviceArea: "Serving the greater Kansas City metro — Missouri & Kansas",
   baseCity: "Lee's Summit, MO",
+  /** "Write a review" link used in customer emails. Override with env REVIEW_URL
+   *  (set to your Google "write a review" link for best results). */
+  reviewUrl: "https://www.google.com/search?q=DC+Solar+KC+reviews",
   social: {
     facebook: "https://facebook.com/",
     instagram: "https://instagram.com/",
