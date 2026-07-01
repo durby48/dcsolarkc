@@ -152,6 +152,8 @@ export type Job = {
   scheduled_end: string | null;
   /** Per-company moniker (DC-26001); present once ws-jobs-numbering.sql is run. */
   job_number?: string | null;
+  /** Service/site address; present once ws-jobs-address.sql is run. */
+  address?: string | null;
 };
 
 export type JobInput = {
@@ -162,6 +164,7 @@ export type JobInput = {
   scheduled_for?: string | null;
   scheduled_end?: string | null;
   job_number?: string | null;
+  address?: string | null;
 };
 
 /** A logged block of employee time; labor cost = hours × rate. */
